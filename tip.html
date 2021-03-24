@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        *{ margin: 0;padding: 0;box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        main{
+                height: 100vh;
+                background-image:linear-gradient(to right top, #AFF1E6, #8DE79F, #77B1E2, #C35744 ,#C33F55,#B24BCD) ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            div{
+                max-width: 500px; height:auto ;
+                padding: 50px;
+                background-color: #8de79f6e;
+                box-shadow: 1px 1px 15px 3px ;
+
+            }
+            h1{
+                margin-bottom: 10px;
+                text-shadow:1px 2px 1px  #b0ecd5de ;
+                color:rgb(7, 31, 54) ;
+                text-transform: capitalize;
+            }
+            label{
+                display: block;
+                margin-top: 30px;
+                text-transform: capitalize;
+            }
+            input{
+                padding: 10px 0px;
+                width: 400px;
+            }
+            button{
+                border-radius:10px ;
+                padding: 15px 30px;
+                font-size: 12px;
+                text-transform: uppercase;
+                border: none;
+                color: white;
+                background: #00b894;
+                box-shadow: 1px 1px 5px 1px #2d3436;
+                margin-top: 20px;
+            }
+            select{
+                padding: 10px 0px;
+                width: 400px;
+                text-transform: capitalize;
+                margin-bottom: auto;
+            }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>tip calculator</h1>
+        <div>
+            <label for="">bill amount</label>
+            <input type="text" name="" id="bill_amount" required>
+            <br>
+            <label for="">tip percent</label>
+            <td>
+                <select name="tipper" id="tip_percent" required>
+                    <option value="20">Excelent-20%</option>
+                    <option value="10">Medium-10%</option>
+                    <option value="5">not so good-5%</option>
+                </select>
+               
+            </td>
+            <br>
+            <label for="">No person sharing</label>
+            <input type="text" name="" id="noper_share" required>
+            <br>
+            <label for="">tip amount</label>
+            <input type="text" name="" id="tip_amount" disabled>
+            <br>
+            <label for="">tip share for each person</label>
+            <input type="text" name="" id="total_billed" disabled>
+            <br>
+            <button onclick="tipcalu()">Calculate</button>
+        </div>    
+    </main>
+    <script>
+      const tipcalu = () => {
+          var amount =document.getElementById('bill_amount').value;
+          var percent = document.getElementById('tip_percent').value;
+          var share = document.getElementById('noper_share').value
+          alert(percent);
+          var tip = amount * (percent / 100);
+          alert(tip);
+          var total = tip / Number(share);
+          alert(total);
+          document.getElementById('tip_amount').value=tip;
+          document.getElementById('total_billed').value = total;
+
+      }
+    </script>
+
+</body>
+</html>
